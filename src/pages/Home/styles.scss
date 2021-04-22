@@ -1,0 +1,39 @@
+@import './../../variables.scss';
+
+.home {
+    section {
+        overflow: hidden;
+        position: relative;
+
+        .gradient {
+            width: 100%;
+            margin-left: 5%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &.mainSection {
+            .content_wrap {
+                padding-left: 300px;
+                min-height: 100vh;
+                @include flex-row();
+
+                .info_wrap {
+                    @include flex-row();
+                    width: 100%;
+
+                    .texts_wrap {
+                        width: 50%;
+
+                        .buttons_wrap {
+                            button {
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

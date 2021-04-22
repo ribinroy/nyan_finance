@@ -1,0 +1,51 @@
+@import './inputElementStyles.scss';
+@import './variables.scss';
+
+html {
+    --main-bg-color: rgba(228, 228, 251, 1);
+    --dark-text: rgba(43, 43, 66, 1);
+
+    &[dark='true'] {
+        --main-bg-color: #4f4f4f;
+        --dark-text: rgb(243, 243, 243);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+            'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+            'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: var(--main-bg-color);
+        transition: background 0.4s;
+
+        .content_wrap {
+            max-width: 1350px;
+            padding: 0 15px;
+            margin-left: 50%;
+            transform: translate(-50%);
+            width: 100%;
+
+            h1 {
+                color: var(--dark-text);
+                font-weight: 600;
+                font-size: 48px;
+                line-height: 56px;
+                margin: 0;
+                transition: color 0.4s;
+            }
+
+            p {
+                color: var(--dark-text);
+                font-size: 18px;
+                line-height: 26px;
+                transition: color 0.4s;
+            }
+        }
+    }
+}
