@@ -1,12 +1,10 @@
 import './styles.scss';
-import NavPanel from './../../component/NavPanel';
 import { ReactComponent as Cards } from './../../assets/svg/Cards.svg';
 import { ReactComponent as TopGradient } from './../../assets/svg/topGradient.svg';
 
 const Test = () => {
     return (
         <main className='home'>
-            <NavPanel />
             <section className='mainSection'>
                 <TopGradient className='gradient' />
                 <div className='content_wrap'>
