@@ -3,7 +3,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Redirect,
 } from 'react-router-dom';
 import Home from './pages/Home';
 import NavPanel from './component/NavPanel';
@@ -13,9 +12,11 @@ function App() {
         <>
             <NavPanel />
             <Router>
-                <Route path='/' exact>
-                    <Home />
-                </Route>
+                <Switch>
+                    <Route path='/' exact>
+                        <Home />
+                    </Route>
+                </Switch>
             </Router>
         </>
     );

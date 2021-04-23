@@ -1,22 +1,32 @@
 @import './../../variables.scss';
 
 .home {
+    .gradient {
+        width: 100%;
+        // margin-left: 5%;
+        position: absolute !important;
+        left: 0;
+        top: 0;
+    }
     section {
-        overflow: hidden;
         position: relative;
 
-        .gradient {
-            width: 100%;
-            margin-left: 5%;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
 
+        
+            .content_wrap {
+                min-height: 100vh;
+                @include flex-row();
+                z-index: 3;
+                position: relative;
+
+                img{
+                    margin-right: 10%;
+                    max-width: 40%;
+                }
+            }
         &.mainSection {
             .content_wrap {
                 padding-left: 300px;
-                min-height: 100vh;
                 @include flex-row();
 
                 .info_wrap {
@@ -33,6 +43,54 @@
                         }
                     }
                 }
+            }
+        }
+
+        &.base_1{
+            .gradient{
+                z-index: 2;
+            }
+            img{
+                position: relative;
+                z-index: 1;
+            }
+            .content_wrap{
+                z-index: 1;
+            }
+        }
+
+        &.base_2{
+
+            img{
+                margin-right: 0;
+            }
+        }
+    }
+
+    footer{
+        position: relative;
+
+
+        .gradient{
+            top: auto;
+            bottom: 0;
+        }
+        .nyan_cat{
+            margin-left: 50%;
+            transform: translate(-50%);
+        }
+        .split_box_wrap{
+            align-items: flex-start;
+
+
+            .split_box{
+                width: calc(45% - 20px);
+            }
+            .head{
+                font-weight: 600;
+font-size: 32px;
+line-height: 56px;
+color: var(--dark-text);
             }
         }
     }

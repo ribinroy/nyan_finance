@@ -1,6 +1,5 @@
 import './styles.scss';
 import { useState } from 'react';
-import { ReactComponent as SmallLogo } from './../../assets/svg/LogoOnly.svg';
 import { ReactComponent as BigLogo } from './../../assets/svg/Logo Full.svg';
 
 const Test = () => {
@@ -13,7 +12,7 @@ const Test = () => {
             className={expanded ? ' expanded' : ''}
             onMouseEnter={() => setExpand(true)}
             onMouseLeave={() => setExpand(false)}>
-            {expanded ? <BigLogo /> : <SmallLogo />}
+            <BigLogo className="nyan_logo" />
 
             <input
                 id='s2'

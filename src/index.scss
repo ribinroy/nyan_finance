@@ -25,7 +25,7 @@ html {
         transition: background 0.4s;
 
         .content_wrap {
-            max-width: 1350px;
+            max-width: 1250px;
             padding: 0 15px;
             margin-left: 50%;
             transform: translate(-50%);
@@ -47,5 +47,14 @@ html {
                 transition: color 0.4s;
             }
         }
+    }
+}
+
+.split_box_wrap{
+    @include flex-row();
+    justify-content: space-between;
+
+    .split_box{
+        width: calc(50% - 10px);
     }
 }
