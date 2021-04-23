@@ -50,11 +50,33 @@ html {
     }
 }
 
-.split_box_wrap{
+.split_box_wrap {
     @include flex-row();
     justify-content: space-between;
 
-    .split_box{
+    .split_box {
         width: calc(50% - 10px);
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    html {
+        body {
+            .content_wrap {
+                h1 {
+                    font-size: 28px;
+                    line-height: 38px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .split_box_wrap {
+        flex-direction: column;
+
+        .split_box {
+            width: 100% !important;
+            margin-bottom: 30px;
+        }
     }
 }
