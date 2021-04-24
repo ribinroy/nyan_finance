@@ -3,11 +3,14 @@
 
 html {
     --main-bg-color: rgba(228, 228, 251, 1);
-    --dark-text: rgba(43, 43, 66, 1);
+    --dark-text: #2b2b42;
+    --dark-text-x1: #565d82;
+    --green: #4abd8c;
 
     &[dark='true'] {
         --main-bg-color: #4f4f4f;
         --dark-text: rgb(243, 243, 243);
+        --dark-text-x1: #c9c9c9;
     }
 
     * {
@@ -23,6 +26,19 @@ html {
         -moz-osx-font-smoothing: grayscale;
         background-color: var(--main-bg-color);
         transition: background 0.4s;
+
+        .xs_visible {
+            display: none !important;
+        }
+
+        .flex_wrap {
+            @include flex-row();
+        }
+
+        .mt_center {
+            margin-left: 50%;
+            transform: translate(-50%);
+        }
 
         .content_wrap {
             max-width: 1250px;
@@ -62,11 +78,20 @@ html {
 @media only screen and (max-width: $breakpoint-sm) {
     html {
         body {
+            .xs_hidden {
+                display: none !important;
+            }
+
+            .xs_visible {
+                display: block !important;
+            }
+
             .content_wrap {
+                padding: 0 15px !important;
                 h1 {
-                    font-size: 28px;
-                    line-height: 38px;
-                    text-align: center;
+                    font-size: 24px;
+                    line-height: 32px;
+                    // text-align: center;
                 }
             }
         }

@@ -33,3 +33,27 @@ header {
         }
     }
 }
+
+@media only screen and (max-width: $breakpoint-sm) {
+    header {
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        padding: 15px;
+        justify-content: space-between;
+        flex-direction: row;
+
+        .nyan_logo {
+            transform: scale(1) translate(0px);
+            width: auto;
+            float: left;
+
+            .text_character {
+                opacity: 1;
+            }
+        }
+        .header_items {
+            display: none;
+        }
+    }
+}

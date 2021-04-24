@@ -50,7 +50,7 @@ $slide-card-width: 360px;
     background-repeat: repeat-y;
 }
 
-@mixin pseudo-abs() {
+@mixin pseudo_abs() {
     content: '';
     position: absolute;
     width: 100%;

@@ -13,7 +13,25 @@ const Test = () => {
             <section className='mainSection'>
                 <img src={gradient1} className='gradient' alt='bg' />
                 <div className='content_wrap'>
-                    <div className='top_contents'></div>
+                    <div className='top_contents'>
+                        <div className='left_items'>
+                            <div className='item input_box'>
+                                TOTAL ACTIVITY LIQUIDITY: <span>$ 25 m</span>
+                            </div>
+                            <div className='item input_box'>
+                                TOTAL PASSIVE LIQUIDITY: <span>$ 10 m</span>
+                            </div>
+                        </div>
+                        <div className='right_items'>
+                            <div className='item'>Select chain</div>
+                            <select
+                                name='chain'
+                                id='chain'
+                                className='input_box'>
+                                <option value='ETH'>ETH</option>
+                            </select>
+                        </div>
+                    </div>
                     <div className='info_wrap'>
                         <div className='texts_wrap'>
                             <h1>Decentralized Onchain Fund management</h1>
@@ -23,13 +41,23 @@ const Test = () => {
                             </p>
                             <div className='buttons_wrap'>
                                 <button>Create your own fund</button>
+                                <button className='invert xs_hidden'>
+                                    Stake
+                                </button>
+                                <button className='invert xs_hidden'>
+                                    Documentation
+                                </button>
+                            </div>
+                        </div>
+                        <Cards />
+                        <div className='buttons_wrap xs_visible xs_buttons'>
+                            <div className='flex_wrap'>
                                 <button className='invert'>Stake</button>
                                 <button className='invert'>
                                     Documentation
                                 </button>
                             </div>
                         </div>
-                        <Cards />
                     </div>
                 </div>
             </section>
@@ -77,6 +105,11 @@ const Test = () => {
                                 Nyan is also supercharged and burned through the
                                 growth of external products like Versus.cx
                             </p>
+                            <img
+                                src={nyanCat}
+                                className='nyan_cat xs_visible'
+                                alt='nyan cat'
+                            />
                         </div>
                         <div className='split_box'>
                             <div className='head'>
@@ -91,9 +124,16 @@ const Test = () => {
                                 swap any Nyan ecosystem token to and from chains
                                 like BSC and Lamden
                             </p>
+                            <button className='xs_visible mt_center'>
+                                Create your own fund
+                            </button>
                         </div>
                     </div>
-                    <img src={nyanCat} className='nyan_cat' alt='nyan cat' />
+                    <img
+                        src={nyanCat}
+                        className='nyan_cat xs_hidden'
+                        alt='nyan cat'
+                    />
                 </div>
             </footer>
         </main>
