@@ -64,7 +64,7 @@ const Test = () => {
             <section className='base_1'>
                 <img src={gradient2} className='gradient' alt='bg' />
                 <div className='content_wrap'>
-                    <img src={graphIllustration} alt='graph' srcset='' />
+                    <img src={graphIllustration} alt='graph' srcSet='' />
                     <h1>
                         Nyan is a decentralized ecosystem for creating both
                         actively managed pools and passive index funds.

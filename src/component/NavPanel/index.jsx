@@ -13,9 +13,12 @@ import { ReactComponent as Yield } from './../../assets/svg/panelIcons/icon_flow
 import { ReactComponent as GitHub } from './../../assets/svg/panelIcons/icon_github.svg';
 import { ReactComponent as Swap } from './../../assets/svg/panelIcons/icon_swap.svg';
 import { ReactComponent as Community } from './../../assets/svg/panelIcons/icon_telegram.svg';
+import { ReactComponent as BurgerMenu } from './../../assets/svg/burger menu.svg';
+import { ReactComponent as BurgerMenuClose } from './../../assets/svg/close burger menu.svg';
 
 const Test = () => {
     const [expanded, setExpand] = useState(false);
+    const [mobExpanded, setMobExpanded] = useState(false);
     const nightModeHandler = (e) => {
         document
             .getElementsByTagName('html')[0]
@@ -30,13 +33,25 @@ const Test = () => {
                 <BigLogo className='nyan_logo' />
             </Link>
 
-            <div className='header_items'>
+            {mobExpanded ? (
+                <BurgerMenuClose
+                    className='burger'
+                    onClick={() => setMobExpanded(false)}
+                />
+            ) : (
+                <BurgerMenu
+                    className='burger'
+                    onClick={() => setMobExpanded(true)}
+                />
+            )}
+
+            <div className={'header_items' + (mobExpanded ? ' expanded' : '')}>
                 <div className='connection only_onExpanded'>
                     <input
                         type='text'
                         name='connectId'
                         id='connectId'
-                        value='Ox1234567890'
+                        defaultValue='Ox1234567890'
                     />
                     <button>Disconnect</button>
                 </div>
@@ -75,6 +90,7 @@ const Test = () => {
                     <NavLink link='swap' name='Swap' Icon={Swap} />
                     <NavLink link='yield' name='Yield' Icon={Yield} />
                     <NavLink link='otc-swap' name='OTC Swap' Icon={OTC} />
+                    <NavLink link='governance' name='Governance' Icon={OTC} />
                 </div>
                 <div className='nav_links_set_wrap'>
                     <div className='special_link'>
@@ -104,10 +120,10 @@ const Test = () => {
                     <input
                         id='s2'
                         type='checkbox'
-                        class='switch'
+                        className='switch'
                         onChange={nightModeHandler}
                     />
-                    <label for='s2'>Night Mode</label>
+                    <label htmlFor='s2'>Night Mode</label>
                 </div>
             </div>
         </header>
