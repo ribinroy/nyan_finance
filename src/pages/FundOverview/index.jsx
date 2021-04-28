@@ -1,11 +1,13 @@
 import './styles.scss';
 import Chart from 'react-apexcharts';
+import { ReactComponent as Dollar } from './../../assets/svg/icon_dollar.svg';
+import { ReactComponent as Rise } from './../../assets/svg/icon_rise.svg';
 
 const FundOverView = () => {
     const chartData = {
         series: [
             {
-                name: 'north',
+                name: 'Active',
                 data: [
                     {
                         x: 1996,
@@ -90,7 +92,7 @@ const FundOverView = () => {
                 ],
             },
             {
-                name: 'south',
+                name: 'Passive',
                 data: [
                     {
                         x: 1996,
@@ -259,7 +261,22 @@ const FundOverView = () => {
         <section className='nav_adjust content_wrap fund_overview'>
             <h1>Overview</h1>
             <article>
-                <div className='sub_head'>Fund Liquidity</div>
+                <div className='flex_wrap space_between'>
+                    <div className='left_wrap'>
+                        <div className='sub_head'>Fund Liquidity</div>
+                        <div className='bnb green_text'>3500 BNB</div>
+                    </div>
+                    <div className='right_wrap'>
+                        <div className='legend_wrap'>
+                            <div className='item active'>
+                                <div className='color_box'></div>Active
+                            </div>
+                            <div className='item passive'>
+                                <div className='color_box'></div>Passive
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className='paper_box'>
                     <Chart
                         options={chartData.options}
@@ -273,7 +290,22 @@ const FundOverView = () => {
             <article>
                 <div className='sub_head'>Fund Activity</div>
                 <p>From newest to oldest</p>
-                <div className='paper_box'></div>
+                <div className='paper_box no_padding row_box'>
+                    <div className='row'>
+                        <div className='icon'>
+                            <Rise />
+                        </div>
+                        <div className='hex'>Ox1234567</div>
+                        <div className='description'>took profit</div>
+                    </div>
+                    <div className='row'>
+                        <div className='icon'>
+                            <Dollar />
+                        </div>
+                        <div className='hex'>O124587a4B</div>
+                        <div className='description'>deposited funds</div>
+                    </div>
+                </div>
             </article>
         </section>
     );

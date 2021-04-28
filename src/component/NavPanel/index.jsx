@@ -26,7 +26,9 @@ const Test = () => {
     };
     return (
         <header
-            className={expanded ? ' expanded' : ''}
+            className={
+                (expanded ? ' expanded' : '') + (mobExpanded ? ' expanded' : '')
+            }
             onMouseEnter={() => setExpand(true)}
             onMouseLeave={() => setExpand(false)}>
             <Link to='/'>

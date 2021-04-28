@@ -287,10 +287,21 @@ header {
             padding: 0 !important;
             transition: all 0.4s;
             height: calc(100% - 60px) !important;
+            overflow: hidden;
 
             &.expanded {
                 max-height: 100%;
                 padding-bottom: 30px !important;
+
+                .only_onExpanded {
+                    width: auto !important;
+                    opacity: 1 !important;
+
+                    &.head {
+                        width: 100% !important;
+                        max-height: auto;
+                    }
+                }
             }
         }
     }
