@@ -1,1 +1,91 @@
 @import './../../variables.scss';
+
+.create_pool {
+    .acknwo_wrap {
+        margin-top: 40px;
+        width: 100%;
+        counter-reset: ack-counter;
+        max-width: 60%;
+
+        .ackn_item {
+            padding-left: 50px;
+            position: relative;
+            padding-bottom: 30px;
+
+            &.active {
+                &:before {
+                    background-color: #5a84fc;
+                    color: #fff;
+                }
+
+                .details {
+                    max-height: 350px;
+                }
+            }
+
+            &.passed {
+                &:before {
+                    content: '✓';
+                    background-color: #5a84fc;
+                    color: #fff;
+                }
+            }
+
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:before {
+                @include pseudo_abs();
+                counter-increment: ack-counter;
+                content: counter(ack-counter);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                color: #fff;
+                @include flex-row();
+                line-height: 1;
+                background-color: #fff;
+                color: #000;
+            }
+
+            &:after {
+                @include pseudo_abs();
+                height: calc(100% - 45px);
+                width: 2px;
+                background-color: #fff;
+                left: 15px;
+                top: 35px;
+            }
+
+            .title {
+                font-size: 16px;
+                line-height: 17px;
+                color: var(--dark-text-x1);
+                padding-top: 5px;
+            }
+
+            .details {
+                max-height: 0px;
+                overflow: hidden;
+                transition: max-height 0.5s;
+
+                .buttons_wrap {
+                    button {
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .create_pool {
+        .acknwo_wrap {
+            max-width: 100%;
+        }
+    }
+}

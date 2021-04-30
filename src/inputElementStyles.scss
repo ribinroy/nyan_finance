@@ -6,7 +6,7 @@ button {
     --button-border: #5a84fc;
 
     &.invert {
-        --button-bg: var(--main-bg-color);
+        --button-bg: #fff;
         --button-text: #5a84fc;
     }
 
@@ -34,6 +34,8 @@ button {
         --button-text: rgba(43, 43, 66, 1);
 
         &.invert {
+            --button-bg: #fff;
+            --button-border: #fff;
             --button-text: rgba(228, 228, 251, 1);
         }
     }
