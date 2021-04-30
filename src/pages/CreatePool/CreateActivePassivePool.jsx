@@ -21,7 +21,7 @@ const CreateActivePassivePool = () => {
                 </button>
             </div>
             {showProcessing ? (
-                <Processing />
+                <Processing poolSelected={selectedPool} />
             ) : selectedPool === 'active' ? (
                 <ActivePool onRegClick={() => setProcessing(true)} />
             ) : (
@@ -89,20 +89,33 @@ const PassivePool = ({ onRegClick }) => {
     );
 };
 
-const Processing = () => {
+const Processing = ({ poolSelected }) => {
     return (
         <div className='paper_box processing_box'>
             <p className='head'>Your index transaction is processing...</p>
             <img src={NyanCat} alt='' />
-            <p>
-                You can visit your index here:{' '}
-                <a
-                    href='http://www.google.com'
-                    target='_blank'
-                    rel='noreferrer'>
-                    index link
-                </a>
-            </p>
+            {poolSelected === 'active' && (
+                <p>
+                    You can visit your pool here:{' '}
+                    <a
+                        href='http://www.google.com'
+                        target='_blank'
+                        rel='noreferrer'>
+                        pool link
+                    </a>
+                </p>
+            )}
+            {poolSelected !== 'active' && (
+                <p>
+                    You can visit your index here:{' '}
+                    <a
+                        href='http://www.google.com'
+                        target='_blank'
+                        rel='noreferrer'>
+                        index link
+                    </a>
+                </p>
+            )}
             Tip: your index link is your wallet address
         </div>
     );
