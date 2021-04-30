@@ -7,12 +7,16 @@ html {
     --dark-text-x1: #565d82;
     --green: #4abd8c;
     --base-white: #fff;
+    --input-bg-color: #fff;
+    --border-color: #cfcff2;
 
     &[dark='true'] {
+        --input-bg-color: #2b2b42;
         --main-bg-color: #2b2b42;
         --dark-text: rgb(243, 243, 243);
         --dark-text-x1: #c9c9c9;
         --base-white: rgba(0, 0, 0, 0.329);
+        --border-color: #cfcff21f;
     }
 
     * {
@@ -28,6 +32,7 @@ html {
         -moz-osx-font-smoothing: grayscale;
         background-color: var(--main-bg-color);
         transition: background 0.4s;
+        color: var(--dark-text);
 
         .no_padding {
             padding: 0 !important;

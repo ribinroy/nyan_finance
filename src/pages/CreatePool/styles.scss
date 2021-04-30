@@ -1,11 +1,18 @@
 @import './../../variables.scss';
 
 .create_pool {
+    padding-bottom: 40px !important;
+
+    .max_width_wrap {
+        max-width: 50%;
+        margin-left: 50%;
+        transform: translate(-50%);
+    }
+
     .acknwo_wrap {
         margin-top: 40px;
         width: 100%;
         counter-reset: ack-counter;
-        max-width: 60%;
 
         .ackn_item {
             padding-left: 50px;
@@ -80,11 +87,79 @@
             }
         }
     }
+
+    .button_tab_wrap {
+        margin-top: 40px;
+        button {
+            border-radius: 0;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            &:first-child {
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+
+            &:hover {
+                &:active {
+                    transform: none;
+                }
+            }
+        }
+    }
+
+    .form_wrap {
+        width: 100%;
+        margin-top: 40px;
+
+        .form_item_wrap {
+            width: 100%;
+            margin-bottom: 20px;
+            float: left;
+
+            label {
+                color: var(--dark-text);
+                float: left;
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 5px;
+            }
+            .input_box {
+                width: 100%;
+                float: left;
+            }
+            textarea {
+                max-height: 80px;
+                max-width: 100%;
+                min-height: 80px;
+                min-width: 100%;
+            }
+        }
+    }
+
+    .processing_box {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            margin-top: -12%;
+        }
+
+        .head {
+            font-size: 20px;
+        }
+    }
 }
 
 @media only screen and (max-width: $breakpoint-sm) {
     .create_pool {
-        .acknwo_wrap {
+        .max_width_wrap {
             max-width: 100%;
         }
     }
