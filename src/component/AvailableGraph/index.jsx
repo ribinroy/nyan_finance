@@ -1,7 +1,9 @@
 import './styles.scss';
 import Chart from 'react-apexcharts';
+import { Link } from 'react-router-dom';
 
-const AvailableGraph = () => {
+const AvailableGraph = ({ type, name, owner }) => {
+    const graphColor = type === 'active' ? '#9661dc' : '#6088fc';
     const chartData = {
         series: [
             {
@@ -91,7 +93,7 @@ const AvailableGraph = () => {
             },
         ],
         options: {
-            colors: ['#9661dc', '#6088fc'],
+            colors: [graphColor],
             chart: {
                 toolbar: {
                     show: false,
@@ -179,8 +181,9 @@ const AvailableGraph = () => {
         <section className='content_wrap available_graph_wrap'>
             <div className='title'>
                 <div className='prof_pic'></div>
-                <div className='name'>Pool name</div>
+                <div className='name'>{name}</div>
             </div>
+            {owner && <div className='owner'>{owner}</div>}
             <Chart
                 options={chartData.options}
                 series={chartData.series}
@@ -188,26 +191,45 @@ const AvailableGraph = () => {
                 height={250}
             />
             <div className='details'>
-                <p>
-                    Assets under management
-                    <strong>
-                        <span className='green_text'> $ 20.8K</span>
-                    </strong>
-                </p>
-                <p>
-                    Lifetime profits:
-                    <strong>
-                        <span className='green_text'> $ 1.3K</span>
-                    </strong>
-                </p>
-                <div className='top_holds_head'>TOP HOLDS</div>
+                {type === 'active' ? (
+                    <>
+                        <p>
+                            Assets under management
+                            <strong>
+                                <span className='green_text'> $ 20.8K</span>
+                            </strong>
+                        </p>
+                        <p>
+                            Lifetime profits:
+                            <strong>
+                                <span className='green_text'> $ 1.3K</span>
+                            </strong>
+                        </p>
+                        <div className='top_holds_head'>TOP HOLDS</div>
+                    </>
+                ) : (
+                    <>
+                        <p>
+                            Index valuation:
+                            <strong>
+                                <span className='green_text'> $ 20.8K</span>
+                            </strong>
+                        </p>
+                        <div className='top_holds_head'>TOKENS</div>
+                    </>
+                )}
                 <div className='top_holds'>
                     <div className='item'>LINK</div>
                     <div className='item'>WBTC</div>
                     <div className='item'>AAVE</div>
                 </div>
             </div>
-            <button>View</button>
+            <Link
+                to={
+                    type === 'active' ? 'active-pool-info' : '/index-fund-info'
+                }>
+                <button>View</button>
+            </Link>
         </section>
     );
 };

@@ -32,6 +32,8 @@
         @include flex-row();
         justify-content: flex-start;
         color: var(--dark-text);
+        font-size: 20px;
+        line-height: 28px;
 
         .prof_pic {
             width: 32px;
@@ -40,5 +42,13 @@
             background-color: var(--dark-text-x1);
             margin-right: 10px;
         }
+    }
+
+    .owner {
+        font-size: 16px;
+        line-height: 26px;
+        width: 100%;
+        color: var(--dark-text-x1);
+        padding-left: 43px;
     }
 }

@@ -36,6 +36,8 @@ function App() {
                     <Route path='/otc-swap'>
                         <NyanOTCSwap />
                     </Route>
+                    <Route path='/active-pool-info'>WIP A</Route>
+                    <Route path='/index-fund-info'>WIP I</Route>
                 </Switch>
             </Router>
         </>

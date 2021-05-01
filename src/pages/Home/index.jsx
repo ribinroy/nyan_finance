@@ -22,7 +22,7 @@ const Test = () => {
                                 TOTAL PASSIVE LIQUIDITY: <span>$ 10 m</span>
                             </div>
                         </div>
-                        <div className='right_items'>
+                        <div className='right_items select_wrap'>
                             <div className='item'>Select chain</div>
                             <select
                                 name='chain'
