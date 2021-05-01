@@ -3,12 +3,6 @@
 .create_pool {
     padding-bottom: 40px !important;
 
-    .max_width_wrap {
-        max-width: 50%;
-        margin-left: 50%;
-        transform: translate(-50%);
-    }
-
     .acknwo_wrap {
         margin-top: 40px;
         width: 100%;
@@ -113,35 +107,6 @@
         }
     }
 
-    .form_wrap {
-        width: 100%;
-        margin-top: 40px;
-
-        .form_item_wrap {
-            width: 100%;
-            margin-bottom: 20px;
-            float: left;
-
-            label {
-                color: var(--dark-text);
-                float: left;
-                font-size: 16px;
-                line-height: 24px;
-                margin-bottom: 5px;
-            }
-            .input_box {
-                width: 100%;
-                float: left;
-            }
-            textarea {
-                max-height: 80px;
-                max-width: 100%;
-                min-height: 80px;
-                min-width: 100%;
-            }
-        }
-    }
-
     .processing_box {
         width: 100%;
         overflow: hidden;
@@ -162,12 +127,6 @@
         body {
             .create_pool {
                 padding-bottom: 30px !important;
-
-                .max_width_wrap {
-                    max-width: 100% !important;
-                    margin-left: 0;
-                    transform: none;
-                }
             }
         }
     }

@@ -32,11 +32,19 @@ button {
         --button-bg: #313149;
         --button-border: #2b2b42;
         --button-text: rgba(43, 43, 66, 1);
+        cursor: default !important;
+        transition: none !important;
 
         &.invert {
             --button-bg: var(--input-bg-color);
-            --button-border: var(--input-bg-color);
+            --button-border: var(--border-color-dark-only);
             --button-text: rgba(228, 228, 251, 1);
+        }
+
+        &:hover {
+            &:active {
+                transform: scale(1);
+            }
         }
     }
 
