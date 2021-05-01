@@ -6,6 +6,7 @@ html {
     --dark-text: #2b2b42;
     --dark-text-x1: #565d82;
     --green: #4abd8c;
+    --purple: #8d53d9;
     --base-white: #fff;
     --input-bg-color: #fff;
     --border-color: #cfcff2;
@@ -90,6 +91,10 @@ html {
             padding: 0 !important;
         }
 
+        .no_margin {
+            margin: 0 !important;
+        }
+
         .xs_visible {
             display: none !important;
         }
@@ -109,6 +114,10 @@ html {
 
         .green_text {
             color: var(--green);
+        }
+
+        .purple_text {
+            color: var(--purple) !important;
         }
 
         .row_box {
@@ -166,6 +175,11 @@ html {
                 transition: color 0.4s;
             }
 
+            .head {
+                font-size: 20px;
+                line-height: 26px;
+            }
+
             .sub_head {
                 color: var(--dark-text);
                 font-size: 18px;
@@ -179,6 +193,11 @@ html {
                 font-size: 18px;
                 line-height: 26px;
                 transition: color 0.4s;
+
+                &.small {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
             }
 
             .paper_box {
@@ -190,11 +209,6 @@ html {
                 padding: 15px;
                 border: 1px solid var(--border-color-dark-only);
                 transition: background 0.4s, color 0.5s;
-
-                .head {
-                    font-size: 18px;
-                    line-height: 26px;
-                }
             }
         }
     }
@@ -266,6 +280,12 @@ html {
             width: 100% !important;
             margin-bottom: 30px;
         }
+    }
+}
+
+@media only screen and (max-width: 1420px) {
+    html body .content_wrap {
+        padding-left: 90px;
     }
 }
 

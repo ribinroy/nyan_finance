@@ -6,6 +6,7 @@ import CreatePool from './pages/CreatePool';
 import FundOverview from './pages/FundOverview';
 import Governance from './pages/Governance';
 import IndexFunds from './pages/IndexFunds';
+import PoolIndexInfo from './pages/PoolIndexInfo';
 import NyanOTCSwap from './pages/NyanOTCSwap';
 import NavPanel from './component/NavPanel';
 
@@ -36,8 +37,12 @@ function App() {
                     <Route path='/otc-swap'>
                         <NyanOTCSwap />
                     </Route>
-                    <Route path='/active-pool-info'>WIP A</Route>
-                    <Route path='/index-fund-info'>WIP I</Route>
+                    <Route path='/active-pool-info'>
+                        <PoolIndexInfo type='active' />
+                    </Route>
+                    <Route path='/index-fund-info'>
+                        <PoolIndexInfo type='passive' />
+                    </Route>
                 </Switch>
             </Router>
         </>
