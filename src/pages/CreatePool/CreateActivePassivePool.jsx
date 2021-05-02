@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import NyanCat from './../../assets/svg/nyanCat.svg';
+import { ReactComponent as Interrogation } from './../../assets/svg/icon_interrogation.svg';
 
 const CreateActivePassivePool = () => {
     const [selectedPool, setPool] = useState('active');
@@ -68,7 +69,9 @@ const PassivePool = ({ onRegClick }) => {
         <div className='form_wrap'>
             {formQuestionsArray.map((el) => (
                 <div className='form_item_wrap'>
-                    <label>{el}</label>
+                    <label>
+                        {el} {el === 'Index percentage' && <Interrogation />}
+                    </label>
                     <input type='text' className='input_box' />
                 </div>
             ))}

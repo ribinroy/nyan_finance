@@ -1,1 +1,62 @@
 @import './../../variables.scss';
+
+.pool_index_wap {
+    .button_wrap {
+        button {
+            margin-left: 15px;
+        }
+    }
+
+    .profile_card {
+        @include flex-row();
+        .prof_image {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--dark-text-x1);
+            float: left;
+        }
+
+        .details {
+            float: left;
+            @include flex-column();
+            align-items: flex-start;
+            padding-left: 10px;
+
+            .name {
+                font-size: 18px;
+                line-height: 18px;
+                color: var(--dark-text);
+            }
+
+            .creator {
+                font-size: 16px;
+                color: var(--dark-text-x1);
+                line-height: 26px;
+            }
+        }
+    }
+
+    .pool_warning_box {
+        p {
+            margin: 0;
+            @include flex-row();
+            justify-content: flex-start;
+
+            svg {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .available_credits {
+        margin-bottom: 0px !important;
+        margin-top: 10px !important;
+    }
+
+    .index_tokens_wrap {
+        // margin-top: 20px;
+        float: left;
+        width: 100%;
+    }
+}

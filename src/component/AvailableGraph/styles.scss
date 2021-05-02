@@ -9,24 +9,6 @@
         line-height: 26px;
         color: var(--dark-text);
     }
-    .top_holds {
-        @include flex-row();
-        justify-content: flex-start;
-        margin-top: 5px;
-
-        .item {
-            border: 1px solid #735a95;
-            border-radius: 3px;
-            font-size: 10px;
-            line-height: 12px;
-            text-align: center;
-            text-transform: uppercase;
-            color: #735a95;
-            padding: 4px 8px;
-            margin-right: 10px;
-            margin-bottom: 20px;
-        }
-    }
 
     .title {
         @include flex-row();

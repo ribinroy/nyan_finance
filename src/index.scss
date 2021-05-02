@@ -37,6 +37,19 @@ html {
         transition: background 0.4s;
         color: var(--dark-text);
 
+        tspan {
+            fill: var(--dark-text);
+        }
+
+        .apexcharts-tooltip {
+            color: var(--dark-text) !important;
+            background-color: var(--main-bg-color) !important;
+
+            .apexcharts-tooltip-title {
+                background-color: var(--main-bg-color) !important;
+            }
+        }
+
         .form_wrap {
             width: 100%;
             margin-top: 40px;
@@ -53,6 +66,12 @@ html {
                     line-height: 24px;
                     margin-bottom: 5px;
                     width: 100%;
+                    @include flex-row();
+                    justify-content: flex-start;
+
+                    svg {
+                        margin-left: 10px;
+                    }
                 }
                 .input_box {
                     width: 100%;
@@ -87,6 +106,32 @@ html {
             transform: translate(-50%);
         }
 
+        .top_holds {
+            @include flex-row();
+            justify-content: flex-start;
+            margin-top: 5px;
+
+            .item {
+                border: 1px solid #735a95;
+                border-radius: 3px;
+                font-size: 10px;
+                line-height: 12px;
+                text-align: center;
+                text-transform: uppercase;
+                color: #735a95;
+                padding: 4px 8px;
+                margin-right: 10px;
+                margin-bottom: 20px;
+                background-color: var(--input-bg-color);
+            }
+        }
+
+        .width_100 {
+            width: 100%;
+        }
+        .all_uppercase {
+            text-transform: uppercase;
+        }
         a,
         .link {
             font-weight: 600;
@@ -152,6 +197,9 @@ html {
                     // @include flex-row();
                 }
 
+                .date {
+                    width: 10%;
+                }
                 .hex {
                     width: 15%;
                     font-weight: 600;
