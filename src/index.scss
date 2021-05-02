@@ -87,6 +87,14 @@ html {
             transform: translate(-50%);
         }
 
+        a,
+        .link {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            color: #5a84fc;
+        }
+
         .no_padding {
             padding: 0 !important;
         }
@@ -201,14 +209,7 @@ html {
             }
 
             .paper_box {
-                float: left;
-                width: 100%;
-                background-color: var(--base-white);
-                border-radius: 8px;
-                margin: 15px 0;
-                padding: 15px;
-                border: 1px solid var(--border-color-dark-only);
-                transition: background 0.4s, color 0.5s;
+                @include plain_box();
             }
         }
     }
@@ -223,9 +224,27 @@ html {
     }
 }
 
+@media only screen and (max-width: 1420px) {
+    html body .nav_adjust {
+        padding-left: 90px;
+    }
+}
+
 @media only screen and (max-width: $breakpoint-sm) {
     html {
         body {
+            .flex_column_sm {
+                flex-direction: column;
+            }
+
+            .align_center_ml_sm {
+                margin-left: 50%;
+                transform: translate(-50%);
+            }
+
+            .nav_adjust {
+                padding-left: 0px;
+            }
             .max_width_wrap {
                 max-width: 100% !important;
                 margin-left: 0;
@@ -240,6 +259,18 @@ html {
                 display: block !important;
             }
 
+            .paper_box {
+                &.plain_sm {
+                    float: left;
+                    width: 100%;
+                    background-color: transparent;
+                    border-radius: 0px;
+                    margin: 0;
+                    padding: 0;
+                    border: 0px;
+                    transition: none;
+                }
+            }
             .row_box {
                 .row {
                     &:last-child {
@@ -280,12 +311,6 @@ html {
             width: 100% !important;
             margin-bottom: 30px;
         }
-    }
-}
-
-@media only screen and (max-width: 1420px) {
-    html body .content_wrap {
-        padding-left: 90px;
     }
 }
 

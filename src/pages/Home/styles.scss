@@ -1,6 +1,7 @@
 @import './../../variables.scss';
 
-$sideAdjust: 250px;
+// $sideAdjust: 250px;
+$sideAdjust: 0px;
 
 .home {
     overflow: hidden;
@@ -58,6 +59,7 @@ $sideAdjust: 250px;
                 .info_wrap {
                     @include flex-row();
                     width: 100%;
+                    // justify-content: space-between;
 
                     .texts_wrap {
                         width: 50%;

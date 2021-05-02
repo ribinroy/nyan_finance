@@ -10,7 +10,7 @@ import nyanCat from './../../assets/svg/nyanCat.svg';
 const Test = () => {
     return (
         <main className='home'>
-            <section className='mainSection'>
+            <section className='mainSection nav_adjust'>
                 <img src={gradient1} className='gradient' alt='bg' />
                 <div className='content_wrap'>
                     <div className='top_contents'>
@@ -61,7 +61,7 @@ const Test = () => {
                     </div>
                 </div>
             </section>
-            <section className='base_1'>
+            <section className='nav_adjust base_1'>
                 <img src={gradient2} className='gradient' alt='bg' />
                 <div className='content_wrap'>
                     <img src={graphIllustration} alt='graph' srcSet='' />
@@ -71,7 +71,7 @@ const Test = () => {
                     </h1>
                 </div>
             </section>
-            <section className='base_2'>
+            <section className='nav_adjust base_2'>
                 <div className='content_wrap'>
                     <h1>
                         Nyan allows managers to customize their pools to fit
@@ -80,7 +80,7 @@ const Test = () => {
                     <img src={catIllustration} alt={'cat'} />
                 </div>
             </section>
-            <section className='base_3'>
+            <section className='nav_adjust base_3'>
                 <div className='content_wrap'>
                     <h1>
                         Most new entrants to crypto are unsure of what assets to
@@ -90,7 +90,7 @@ const Test = () => {
                     </h1>
                 </div>
             </section>
-            <footer>
+            <footer className='nav_adjust'>
                 <img src={gradient3} className='gradient' alt='bg' />
                 <div className='content_wrap'>
                     <div className='split_box_wrap'>

@@ -7,7 +7,7 @@ header {
     @include flex-column();
     justify-content: flex-start;
     padding-top: 15px;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 99999;
@@ -87,7 +87,11 @@ header {
                 background-color: #353553;
                 padding: 10px;
                 width: calc(100% - 65px);
+                transition: background 0.4s;
 
+                &:hover {
+                    background-color: #353553a8;
+                }
                 svg {
                     margin-right: 15px;
                 }

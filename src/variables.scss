@@ -58,4 +58,15 @@ $slide-card-width: 360px;
     left: 0%;
     top: 0%;
 }
+
+@mixin plain_box() {
+    float: left;
+    width: 100%;
+    background-color: var(--base-white);
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid var(--border-color-dark-only);
+    transition: background 0.4s, color 0.5s;
+}
 // -----------end of Mixins-------------
