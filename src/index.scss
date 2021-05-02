@@ -37,6 +37,10 @@ html {
         transition: background 0.4s;
         color: var(--dark-text);
 
+        .margin_top_10 {
+            margin-top: 10px;
+        }
+
         tspan {
             fill: var(--dark-text);
         }
@@ -128,6 +132,7 @@ html {
 
         .width_100 {
             width: 100%;
+            float: left;
         }
         .all_uppercase {
             text-transform: uppercase;

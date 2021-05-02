@@ -1,5 +1,7 @@
 import './styles.scss';
+import { useState } from 'react';
 import Chart from 'react-apexcharts';
+// import PopUp from './../../component/PopUp';
 import { ReactComponent as Exclamation } from './../../assets/svg/icon_exclamation.svg';
 import { ReactComponent as Enter } from './../../assets/svg/icon_enter.svg';
 import { ReactComponent as Exit } from './../../assets/svg/icon_exit.svg';
@@ -7,6 +9,8 @@ import { ReactComponent as Dollar } from './../../assets/svg/icon_dollar_green.s
 import { ReactComponent as Invest } from './../../assets/svg/icon_invest.svg';
 
 const PoolIndexInfo = ({ type }) => {
+    // eslint-disable-next-line 
+    const [showEditPop, setShowEditPop] = useState(false);
     const graphColor = type === 'active' ? '#9661dc' : '#6088fc';
     const chartData = {
         series: [
@@ -171,6 +175,12 @@ const PoolIndexInfo = ({ type }) => {
 
     return (
         <section className='nav_adjust content_wrap pool_index_wap'>
+            {/* <PopUp
+                visible={showEditPop}
+                onClose={() => setShowEditPop(false)}
+                responsive={false}>
+                <button onClick={() => setShowEditPop(false)}>Update</button>
+            </PopUp> */}
             <div className='flex_wrap space_between'>
                 <div className='profile_card'>
                     <div className='prof_image'></div>
@@ -187,7 +197,7 @@ const PoolIndexInfo = ({ type }) => {
                 </div>
                 <div className='flex_wrap button_wrap'>
                     <button className='invert'>Pool holdings</button>
-                    <button>Edit</button>
+                    <button onClick={() => setShowEditPop(true)}>Edit</button>
                 </div>
             </div>
             <article className='paper_box   pool_warning_box'>
@@ -196,52 +206,58 @@ const PoolIndexInfo = ({ type }) => {
                     Pool warning:
                 </p>
             </article>
-            <p>Pool taken:</p>
-            <p>My tokens:</p>
-            <div className='button_wrap'>
-                <button className='invert no_margin'>Add BNB</button>
-                <button className='invert'>Remove BNB</button>
-                <button className='invert'>Take profits</button>
-            </div>
-            <article className='paper_box all_uppercase available_credits'>
-                <p className='no_margin'>
-                    BNB available:
-                    <strong className='green_text'> 10</strong>
-                </p>
+            <article>
+                <p>Pool taken:</p>
             </article>
-            {type === 'active' && (
+            <article>
+                <p>My tokens:</p>
+                <div className='button_wrap'>
+                    <button className='invert no_margin'>Add BNB</button>
+                    <button className='invert'>Remove BNB</button>
+                    <button className='invert'>Take profits</button>
+                </div>
+            </article>
+            <article>
                 <div className='paper_box all_uppercase available_credits'>
                     <p className='no_margin'>
-                        available profits:
-                        <strong className='green_text'> 5</strong>
+                        BNB available:
+                        <strong className='green_text'> 10</strong>
                     </p>
                 </div>
-            )}
-            {type === 'passive' && (
-                <>
+                {type === 'active' && (
                     <div className='paper_box all_uppercase available_credits'>
                         <p className='no_margin'>
-                            My initial investment:
-                            <strong className='green_text'> 3 BNB</strong>
+                            available profits:
+                            <strong className='green_text'> 5</strong>
                         </p>
                     </div>
-                    <div className='paper_box all_uppercase available_credits'>
-                        <p className='no_margin'>
-                            current value:
-                            <strong className='green_text'> 10BNB</strong>
-                        </p>
-                    </div>
-                    <div className='index_tokens_wrap'>
-                        <p>Index Tokens</p>
-                        <div className='top_holds'>
-                            <div className='item'>WBTC 30%</div>
-                            <div className='item'>LINK 20%</div>
-                            <div className='item'>AAVE 50%</div>
+                )}
+                {type === 'passive' && (
+                    <>
+                        <div className='paper_box all_uppercase available_credits'>
+                            <p className='no_margin'>
+                                My initial investment:
+                                <strong className='green_text'> 3 BNB</strong>
+                            </p>
                         </div>
-                    </div>
-                </>
-            )}
-            <article>
+                        <div className='paper_box all_uppercase available_credits'>
+                            <p className='no_margin'>
+                                current value:
+                                <strong className='green_text'> 10BNB</strong>
+                            </p>
+                        </div>
+                        <div className='index_tokens_wrap'>
+                            <p>Index Tokens</p>
+                            <div className='top_holds'>
+                                <div className='item'>WBTC 30%</div>
+                                <div className='item'>LINK 20%</div>
+                                <div className='item'>AAVE 50%</div>
+                            </div>
+                        </div>
+                    </>
+                )}
+            </article>
+            <article className='margin_top_10 width_100'>
                 <div className='flex_wrap space_between width_100'>
                     <div className='head'>Chart</div>
                     <div className='abs_right'>
