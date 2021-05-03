@@ -1,15 +1,15 @@
 import './styles.scss';
 import { useState } from 'react';
 import Chart from 'react-apexcharts';
-// import PopUp from './../../component/PopUp';
+import PopUp from './../../component/PopUp';
 import { ReactComponent as Exclamation } from './../../assets/svg/icon_exclamation.svg';
 import { ReactComponent as Enter } from './../../assets/svg/icon_enter.svg';
 import { ReactComponent as Exit } from './../../assets/svg/icon_exit.svg';
 import { ReactComponent as Dollar } from './../../assets/svg/icon_dollar_green.svg';
 import { ReactComponent as Invest } from './../../assets/svg/icon_invest.svg';
+import { ReactComponent as Edit } from './../../assets/svg/icon_edit.svg';
 
 const PoolIndexInfo = ({ type }) => {
-    // eslint-disable-next-line 
     const [showEditPop, setShowEditPop] = useState(false);
     const graphColor = type === 'active' ? '#9661dc' : '#6088fc';
     const chartData = {
@@ -174,153 +174,195 @@ const PoolIndexInfo = ({ type }) => {
     };
 
     return (
-        <section className='nav_adjust content_wrap pool_index_wap'>
-            {/* <PopUp
-                visible={showEditPop}
-                onClose={() => setShowEditPop(false)}
-                responsive={false}>
-                <button onClick={() => setShowEditPop(false)}>Update</button>
-            </PopUp> */}
-            <div className='flex_wrap space_between'>
-                <div className='profile_card'>
-                    <div className='prof_image'></div>
-                    <div className='details'>
-                        {type === 'active' ? (
-                            <>
-                                <div className='name'>Pool name</div>
-                                <div className='creator'>Pool creator</div>
-                            </>
-                        ) : (
-                            <div className='name'>Index name</div>
-                        )}
+        <>
+            <EditPopUp
+                showEditPop={showEditPop}
+                setShowEditPop={setShowEditPop}
+            />
+            <section className='nav_adjust content_wrap pool_index_wap'>
+                <div className='flex_wrap space_between'>
+                    <div className='profile_card'>
+                        <div className='prof_image'></div>
+                        <div className='details'>
+                            {type === 'active' ? (
+                                <>
+                                    <div className='name'>Pool name</div>
+                                    <div className='creator'>Pool creator</div>
+                                </>
+                            ) : (
+                                <div className='name'>Index name</div>
+                            )}
+                        </div>
+                    </div>
+                    <div className='flex_wrap button_wrap'>
+                        <button className='invert'>Pool holdings</button>
+                        <button onClick={() => setShowEditPop(true)}>
+                            Edit
+                        </button>
                     </div>
                 </div>
-                <div className='flex_wrap button_wrap'>
-                    <button className='invert'>Pool holdings</button>
-                    <button onClick={() => setShowEditPop(true)}>Edit</button>
-                </div>
-            </div>
-            <article className='paper_box   pool_warning_box'>
-                <p className='purple_text'>
-                    <Exclamation />
-                    Pool warning:
-                </p>
-            </article>
-            <article>
-                <p>Pool taken:</p>
-            </article>
-            <article>
-                <p>My tokens:</p>
-                <div className='button_wrap'>
-                    <button className='invert no_margin'>Add BNB</button>
-                    <button className='invert'>Remove BNB</button>
-                    <button className='invert'>Take profits</button>
-                </div>
-            </article>
-            <article>
-                <div className='paper_box all_uppercase available_credits'>
-                    <p className='no_margin'>
-                        BNB available:
-                        <strong className='green_text'> 10</strong>
+                <article className='paper_box   pool_warning_box'>
+                    <p className='purple_text'>
+                        <Exclamation />
+                        Pool warning:
                     </p>
-                </div>
-                {type === 'active' && (
+                </article>
+                <article>
+                    <p>Pool taken:</p>
+                </article>
+                <article>
+                    <p>My tokens:</p>
+                    <div className='button_wrap'>
+                        <button className='invert no_margin'>Add BNB</button>
+                        <button className='invert'>Remove BNB</button>
+                        <button className='invert'>Take profits</button>
+                    </div>
+                </article>
+                <article>
                     <div className='paper_box all_uppercase available_credits'>
                         <p className='no_margin'>
-                            available profits:
-                            <strong className='green_text'> 5</strong>
+                            BNB available:
+                            <strong className='green_text'> 10</strong>
                         </p>
                     </div>
-                )}
-                {type === 'passive' && (
-                    <>
+                    {type === 'active' && (
                         <div className='paper_box all_uppercase available_credits'>
                             <p className='no_margin'>
-                                My initial investment:
-                                <strong className='green_text'> 3 BNB</strong>
+                                available profits:
+                                <strong className='green_text'> 5</strong>
                             </p>
                         </div>
-                        <div className='paper_box all_uppercase available_credits'>
-                            <p className='no_margin'>
-                                current value:
-                                <strong className='green_text'> 10BNB</strong>
-                            </p>
-                        </div>
-                        <div className='index_tokens_wrap'>
-                            <p>Index Tokens</p>
-                            <div className='top_holds'>
-                                <div className='item'>WBTC 30%</div>
-                                <div className='item'>LINK 20%</div>
-                                <div className='item'>AAVE 50%</div>
+                    )}
+                    {type === 'passive' && (
+                        <>
+                            <div className='paper_box all_uppercase available_credits'>
+                                <p className='no_margin'>
+                                    My initial investment:
+                                    <strong className='green_text'>
+                                        {' '}
+                                        3 BNB
+                                    </strong>
+                                </p>
                             </div>
-                        </div>
-                    </>
-                )}
-            </article>
-            <article className='margin_top_10 width_100'>
-                <div className='flex_wrap space_between width_100'>
-                    <div className='head'>Chart</div>
-                    <div className='abs_right'>
-                        <select name='sort' id='sort' className='input_box'>
-                            <option value='Last 30 days'>Last 30 days</option>
-                        </select>
-                    </div>
-                </div>
-                <div className='paper_box'>
-                    <Chart
-                        options={chartData.options}
-                        series={chartData.series}
-                        type='area'
-                        height={550}
-                    />
-                </div>
-            </article>
-            <article>
-                <div className='head'>History</div>
-                {type === 'active' ? (
-                    <div className='row_box paper_box no_padding'>
-                        <div className='row'>
-                            <div className='icon'>
-                                <Invest />
+                            <div className='paper_box all_uppercase available_credits'>
+                                <p className='no_margin'>
+                                    current value:
+                                    <strong className='green_text'>
+                                        {' '}
+                                        10BNB
+                                    </strong>
+                                </p>
                             </div>
-                            <div className='date'>08.04.2021</div>
-                            <div className='hex'>Invested 2 BNB in LINK</div>
-                        </div>
-                        <div className='row'>
-                            <div className='icon'>
-                                <Dollar />
+                            <div className='index_tokens_wrap'>
+                                <p>Index Tokens</p>
+                                <div className='top_holds'>
+                                    <div className='item'>WBTC 30%</div>
+                                    <div className='item'>LINK 20%</div>
+                                    <div className='item'>AAVE 50%</div>
+                                </div>
                             </div>
-                            <div className='date'>04.04.2021</div>
-                            <div className='hex'>Liquidated 10 WBTC</div>
+                        </>
+                    )}
+                </article>
+                <article className='margin_top_10 width_100'>
+                    <div className='flex_wrap space_between width_100'>
+                        <div className='head'>Chart</div>
+                        <div className='abs_right'>
+                            <select name='sort' id='sort' className='input_box'>
+                                <option value='Last 30 days'>
+                                    Last 30 days
+                                </option>
+                            </select>
                         </div>
                     </div>
-                ) : (
-                    <div className='row_box paper_box no_padding'>
-                        <div className='row'>
-                            <div className='icon'>
-                                <Enter />
-                            </div>
-                            <div className='date'>08.04.2021</div>
-                            <div className='hex'>Ox1234567890</div>
-                            <div className='description'>
-                                entered pool with 2 BNB
-                            </div>
-                        </div>
-                        <div className='row'>
-                            <div className='icon'>
-                                <Exit />
-                            </div>
-                            <div className='date'>04.04.2021</div>
-                            <div className='hex'>Ox148791201</div>
-                            <div className='description'>
-                                exited pool with 1 BNB
-                            </div>
-                        </div>
+                    <div className='paper_box'>
+                        <Chart
+                            options={chartData.options}
+                            series={chartData.series}
+                            type='area'
+                            height={550}
+                        />
                     </div>
-                )}
-            </article>
-        </section>
+                </article>
+                <article>
+                    <div className='head'>History</div>
+                    {type === 'active' ? (
+                        <div className='row_box paper_box no_padding'>
+                            <div className='row'>
+                                <div className='icon'>
+                                    <Invest />
+                                </div>
+                                <div className='date'>08.04.2021</div>
+                                <div className='hex'>
+                                    Invested 2 BNB in LINK
+                                </div>
+                            </div>
+                            <div className='row'>
+                                <div className='icon'>
+                                    <Dollar />
+                                </div>
+                                <div className='date'>04.04.2021</div>
+                                <div className='hex'>Liquidated 10 WBTC</div>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className='row_box paper_box no_padding'>
+                            <div className='row'>
+                                <div className='icon'>
+                                    <Enter />
+                                </div>
+                                <div className='date'>08.04.2021</div>
+                                <div className='hex'>Ox1234567890</div>
+                                <div className='description'>
+                                    entered pool with 2 BNB
+                                </div>
+                            </div>
+                            <div className='row'>
+                                <div className='icon'>
+                                    <Exit />
+                                </div>
+                                <div className='date'>04.04.2021</div>
+                                <div className='hex'>Ox148791201</div>
+                                <div className='description'>
+                                    exited pool with 1 BNB
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </article>
+            </section>
+        </>
     );
 };
 
+const EditPopUp = ({ showEditPop, setShowEditPop }) => {
+    return (
+        <PopUp
+            visible={showEditPop}
+            className={'edit_pop_up'}
+            onClose={() => setShowEditPop(false)}
+            responsive={false}>
+            <div className='edit_header'>
+                <div className='image'></div>
+                <Edit />
+                <div>Edit pool image</div>
+            </div>
+            <div className='form_wrap'>
+                <div className='form_item_wrap'>
+                    <label>Pool manager fee %:</label>
+                    <input
+                        type='text'
+                        className='input_box'
+                        defaultValue='1%'
+                    />
+                </div>
+                <div className='form_item_wrap'>
+                    <label>Pool description:</label>
+                    <textarea className='input_box' />
+                </div>
+            </div>
+            <button onClick={() => setShowEditPop(false)}>Update</button>
+        </PopUp>
+    );
+};
 export default PoolIndexInfo;

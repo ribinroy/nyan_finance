@@ -17,7 +17,7 @@
     overflow: hidden;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.753);
-        width: 100vw;
+    width: 100vw;
 
     &.active {
         opacity: 1;
@@ -55,6 +55,10 @@
                 float: right;
                 font-size: 18px;
             }
+        }
+
+        .header-data-wrap {
+            // padding-top: 25px;
         }
 
         .body-wrap {

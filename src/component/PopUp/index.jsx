@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './PopUp.scss';
 
-export default function PopUp({ visible, children, onClose, responsive }) {
+export default function PopUp({
+    visible,
+    children,
+    onClose,
+    responsive,
+    className,
+}) {
     const [showData, setShowData] = useState(false);
     useEffect(() => {
         if (visible) {
@@ -15,18 +21,30 @@ export default function PopUp({ visible, children, onClose, responsive }) {
         }
     }, [showData, visible]);
 
+    const onCloseHandler = (e) => {
+        if (e.target.classList.contains('pop-up-wrap')) onClose();
+    };
+
     return (
-        <div className={'pop-up-wrap' + (visible ? ' active' : '')}>
+        <div
+            className={'pop-up-wrap' + (visible ? ' active' : '')}
+            onClick={(e) => onCloseHandler(e)}>
             <div
                 className={
-                    'pop-up-box ' + (visible ? ' active ' : '') + responsive
+                    'pop-up-box ' +
+                    (visible ? ' active ' : '') +
+                    responsive +
+                    ' ' +
+                    className
                 }>
-                <div className='header-wrap'>
+                {/* <div className='header-wrap'>
                     <div className='close-button' onClick={() => onClose()}>
                         ✕
                     </div>
+                </div> */}
+                <div className='header-data-wrap'>
+                    {showData ? children : ''}
                 </div>
-                {showData ? children : ''}
             </div>
         </div>
     );

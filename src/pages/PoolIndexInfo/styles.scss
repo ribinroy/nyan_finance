@@ -1,7 +1,6 @@
 @import './../../variables.scss';
 
 .pool_index_wap {
-    
     .button_wrap {
         button {
             margin-left: 15px;
@@ -59,5 +58,33 @@
         // margin-top: 20px;
         float: left;
         width: 100%;
+    }
+}
+
+.edit_pop_up {
+    width: 550px !important;
+
+    .form_wrap {
+        margin-top: 0;
+    }
+
+    .edit_header {
+        font-size: 16px;
+        color: var(--lite-text);
+        @include flex-row();
+        justify-content: flex-start;
+        margin-bottom: 15px;
+
+        .image {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--lite-text);
+            margin-right: 10px;
+        }
+
+        svg {
+            margin-right: 10px;
+        }
     }
 }
