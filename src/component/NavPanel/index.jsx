@@ -31,7 +31,12 @@ const Test = () => {
             }
             onMouseEnter={() => setExpand(true)}
             onMouseLeave={() => setExpand(false)}>
-            <Link to='/' onClick={() => setMobExpanded(false)}>
+            <Link
+                to='/'
+                onClick={() => setMobExpanded(false)}
+                data-aos='fade-down'
+                data-aos-offset='0 '
+                data-aos-duration='500'>
                 <BigLogo className='nyan_logo' />
             </Link>
 
@@ -57,7 +62,11 @@ const Test = () => {
                     />
                     <button>Disconnect</button>
                 </div>
-                <div className='nav_links_set_wrap'>
+                <div
+                    className='nav_links_set_wrap'
+                    data-aos='fade-up'
+                    data-aos-offset='0 '
+                    data-aos-duration='700'>
                     <div className='head only_onExpanded'>DASHBOARDS</div>
                     <NavLink
                         onClick={() => setMobExpanded(false)}
@@ -90,7 +99,11 @@ const Test = () => {
                         Icon={Rewards}
                     />
                 </div>
-                <div className='nav_links_set_wrap'>
+                <div
+                    className='nav_links_set_wrap'
+                    data-aos='fade-up'
+                    data-aos-offset='0 '
+                    data-aos-duration='900'>
                     <div className='head only_onExpanded'>
                         CONTRACT INTERFACES
                     </div>
@@ -119,7 +132,11 @@ const Test = () => {
                         Icon={OTC}
                     />
                 </div>
-                <div className='nav_links_set_wrap'>
+                <div
+                    className='nav_links_set_wrap'
+                    data-aos='fade-up'
+                    data-aos-offset='0 '
+                    data-aos-duration='1100'>
                     <div
                         className='special_link'
                         onClick={() => setMobExpanded(false)}>
@@ -149,7 +166,11 @@ const Test = () => {
                         </div>
                     </div>
                 </div>
-                <div className='theme_shift only_onExpanded'>
+                <div
+                    className='theme_shift only_onExpanded'
+                    data-aos='fade-up'
+                    data-aos-offset='0 '
+                    data-aos-duration='1300'>
                     <input
                         id='s2'
                         type='checkbox'

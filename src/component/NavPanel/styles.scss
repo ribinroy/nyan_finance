@@ -285,12 +285,12 @@ header {
             left: 0;
             width: 100%;
             position: fixed;
-            top: 60px;
+            top: 59px;
             background: #2e2e48;
             max-height: 0px;
             padding: 0 !important;
             transition: all 0.4s;
-            height: calc(100% - 60px) !important;
+            height: calc(100% - 59px) !important;
             overflow: hidden;
 
             &.expanded {

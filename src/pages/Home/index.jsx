@@ -13,7 +13,11 @@ const Test = () => {
             <section className='mainSection nav_adjust'>
                 <img src={gradient1} className='gradient' alt='bg' />
                 <div className='content_wrap'>
-                    <div className='top_contents'>
+                    <div
+                        className='top_contents'
+                        data-aos='fade-down'
+                        data-aos-offset='0 '
+                        data-aos-duration='500'>
                         <div className='left_items'>
                             <div className='item input_box'>
                                 TOTAL ACTIVITY LIQUIDITY: <span>$ 25 m</span>
@@ -34,23 +38,52 @@ const Test = () => {
                     </div>
                     <div className='info_wrap'>
                         <div className='texts_wrap'>
-                            <h1>Decentralized Onchain Fund management</h1>
-                            <p>
+                            <h1
+                                data-aos='fade-up'
+                                data-aos-offset='0 '
+                                data-aos-duration='500'>
+                                Decentralized Onchain Fund management
+                            </h1>
+                            <p
+                                data-aos='fade-up'
+                                data-aos-offset='0 '
+                                data-aos-duration='600'>
                                 Join actively managed funds or create your own
                                 fund
                             </p>
                             <div className='buttons_wrap'>
-                                <button>Create your own fund</button>
-                                <button className='invert xs_hidden'>
+                                <button
+                                    data-aos='fade-up'
+                                    data-aos-offset='0 '
+                                    data-aos-duration='700'>
+                                    Create your own fund
+                                </button>
+                                <button
+                                    className='invert xs_hidden'
+                                    data-aos='fade-up'
+                                    data-aos-offset='0 '
+                                    data-aos-duration='800'>
                                     Stake
                                 </button>
-                                <button className='invert xs_hidden'>
+                                <button
+                                    className='invert xs_hidden'
+                                    data-aos='fade-up'
+                                    data-aos-offset='0 '
+                                    data-aos-duration='900'>
                                     Documentation
                                 </button>
                             </div>
                         </div>
-                        <Cards />
-                        <div className='buttons_wrap xs_visible xs_buttons'>
+                        <Cards
+                            data-aos='fade-up'
+                            data-aos-offset='0 '
+                            data-aos-duration='1400'
+                        />
+                        <div
+                            className='buttons_wrap xs_visible xs_buttons'
+                            data-aos='fade-up'
+                            data-aos-offset='0 '
+                            data-aos-duration='900'>
                             <div className='flex_wrap'>
                                 <button className='invert'>Stake</button>
                                 <button className='invert'>
@@ -64,8 +97,18 @@ const Test = () => {
             <section className='nav_adjust base_1'>
                 <img src={gradient2} className='gradient' alt='bg' />
                 <div className='content_wrap'>
-                    <img src={graphIllustration} alt='graph' srcSet='' />
-                    <h1>
+                    <img
+                        src={graphIllustration}
+                        alt='graph'
+                        srcSet=''
+                        data-aos='fade-up'
+                        data-aos-offset='0 '
+                        data-aos-duration='800'
+                    />
+                    <h1
+                        data-aos='fade-up'
+                        data-aos-offset='0 '
+                        data-aos-duration='1000'>
                         Nyan is a decentralized ecosystem for creating both
                         actively managed pools and passive index funds.
                     </h1>
@@ -73,16 +116,28 @@ const Test = () => {
             </section>
             <section className='nav_adjust base_2'>
                 <div className='content_wrap'>
-                    <h1>
+                    <h1
+                        data-aos='fade-up'
+                        data-aos-offset='0 '
+                        data-aos-duration='800'>
                         Nyan allows managers to customize their pools to fit
                         their need, with editable pool fees.
                     </h1>
-                    <img src={catIllustration} alt={'cat'} />
+                    <img
+                        src={catIllustration}
+                        alt={'cat'}
+                        data-aos='fade-up'
+                        data-aos-offset='0 '
+                        data-aos-duration='1000'
+                    />
                 </div>
             </section>
             <section className='nav_adjust base_3'>
                 <div className='content_wrap'>
-                    <h1>
+                    <h1
+                        data-aos='fade-up'
+                        data-aos-offset='0 '
+                        data-aos-duration='800'>
                         Most new entrants to crypto are unsure of what assets to
                         acquire and hold. As a pool manager, you make money for
                         simply telling a smart contract where to move liquidity
@@ -94,7 +149,11 @@ const Test = () => {
                 <img src={gradient3} className='gradient' alt='bg' />
                 <div className='content_wrap'>
                     <div className='split_box_wrap'>
-                        <div className='split_box'>
+                        <div
+                            className='split_box'
+                            data-aos='fade-up'
+                            data-aos-offset='0 '
+                            data-aos-duration='800'>
                             <div className='head'>Sustainable tokenomics</div>
                             <p>
                                 Profits and fees in the Nyan ecosystem are used
@@ -111,7 +170,11 @@ const Test = () => {
                                 alt='nyan cat'
                             />
                         </div>
-                        <div className='split_box'>
+                        <div
+                            className='split_box'
+                            data-aos='fade-up'
+                            data-aos-offset='0 '
+                            data-aos-duration='1200'>
                             <div className='head'>
                                 Multichain Interoperability
                             </div>
@@ -129,11 +192,16 @@ const Test = () => {
                             </button>
                         </div>
                     </div>
-                    <img
-                        src={nyanCat}
-                        className='nyan_cat xs_hidden'
-                        alt='nyan cat'
-                    />
+                    <div
+                        data-aos='fade-up'
+                        data-aos-offset='0 '
+                        data-aos-duration='1500'>
+                        <img
+                            src={nyanCat}
+                            className='nyan_cat xs_hidden'
+                            alt='nyan cat'
+                        />
+                    </div>
                 </div>
             </footer>
         </main>

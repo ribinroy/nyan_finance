@@ -10,7 +10,18 @@ import PoolIndexInfo from './pages/PoolIndexInfo';
 import NyanOTCSwap from './pages/NyanOTCSwap';
 import NavPanel from './component/NavPanel';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 function App() {
+    useEffect(() => {
+        AOS.init({
+            // initialise with other settings
+            duration: 2000,
+        });
+    }, []);
+
     return (
         <>
             <Router>
