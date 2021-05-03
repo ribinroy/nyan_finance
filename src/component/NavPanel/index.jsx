@@ -31,7 +31,7 @@ const Test = () => {
             }
             onMouseEnter={() => setExpand(true)}
             onMouseLeave={() => setExpand(false)}>
-            <Link to='/'>
+            <Link to='/' onClick={() => setMobExpanded(false)}>
                 <BigLogo className='nyan_logo' />
             </Link>
 
@@ -60,26 +60,31 @@ const Test = () => {
                 <div className='nav_links_set_wrap'>
                     <div className='head only_onExpanded'>DASHBOARDS</div>
                     <NavLink
+                        onClick={() => setMobExpanded(false)}
                         link='fund-overview'
                         name='Fund Overview'
                         Icon={OverViewIcon}
                     />
                     <NavLink
+                        onClick={() => setMobExpanded(false)}
                         link='create-a-pool'
                         name='Create a pool'
                         Icon={PlusIcon}
                     />
                     <NavLink
+                        onClick={() => setMobExpanded(false)}
                         link='active-pools'
                         name='Active Pools'
                         Icon={ActivePools}
                     />
                     <NavLink
+                        onClick={() => setMobExpanded(false)}
                         link='passive-pools'
                         name='Passive Pools'
                         Icon={PassivePool}
                     />
                     <NavLink
+                        onClick={() => setMobExpanded(false)}
                         link='nyan-rewards'
                         name='Nyan Rewards'
                         Icon={Rewards}
@@ -89,19 +94,43 @@ const Test = () => {
                     <div className='head only_onExpanded'>
                         CONTRACT INTERFACES
                     </div>
-                    <NavLink link='swap' name='Swap' Icon={Swap} />
-                    <NavLink link='yield' name='Yield' Icon={Yield} />
-                    <NavLink link='otc-swap' name='OTC Swap' Icon={OTC} />
-                    <NavLink link='governance' name='Governance' Icon={OTC} />
+                    <NavLink
+                        onClick={() => setMobExpanded(false)}
+                        link='swap'
+                        name='Swap'
+                        Icon={Swap}
+                    />
+                    <NavLink
+                        onClick={() => setMobExpanded(false)}
+                        link='yield'
+                        name='Yield'
+                        Icon={Yield}
+                    />
+                    <NavLink
+                        onClick={() => setMobExpanded(false)}
+                        link='otc-swap'
+                        name='OTC Swap'
+                        Icon={OTC}
+                    />
+                    <NavLink
+                        onClick={() => setMobExpanded(false)}
+                        link='governance'
+                        name='Governance'
+                        Icon={OTC}
+                    />
                 </div>
                 <div className='nav_links_set_wrap'>
-                    <div className='special_link'>
+                    <div
+                        className='special_link'
+                        onClick={() => setMobExpanded(false)}>
                         <NyanDocum />
                         <div className='text_wrap only_onExpanded'>
                             <div className='main'>Nyan Documentation</div>
                         </div>
                     </div>
-                    <div className='special_link'>
+                    <div
+                        className='special_link'
+                        onClick={() => setMobExpanded(false)}>
                         <Community />
                         <div className='text_wrap only_onExpanded'>
                             <div className='main'>Join Community</div>
@@ -110,7 +139,9 @@ const Test = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='special_link'>
+                    <div
+                        className='special_link'
+                        onClick={() => setMobExpanded(false)}>
                         <GitHub />
                         <div className='text_wrap only_onExpanded'>
                             <div className='main'>Github</div>
@@ -123,6 +154,7 @@ const Test = () => {
                         id='s2'
                         type='checkbox'
                         className='switch'
+                        onClick={() => setMobExpanded(false)}
                         onChange={nightModeHandler}
                     />
                     <label htmlFor='s2'>Night Mode</label>
@@ -132,11 +164,12 @@ const Test = () => {
     );
 };
 
-const NavLink = ({ link, name, Icon }) => {
+const NavLink = ({ link, name, Icon, onClick }) => {
     const location = useLocation();
     return (
         <Link
             to={link}
+            onClick={onClick}
             className={
                 'nav_link' + (location.pathname === '/' + link ? ' active' : '')
             }>

@@ -307,6 +307,23 @@ header {
                     }
                 }
             }
+
+            .nav_links_set_wrap {
+                .head {
+                    text-align: center;
+                    width: 100%;
+                    padding-left: 0 !important;
+                }
+                .nav_link {
+                    justify-content: center;
+                    padding-left: 0 !important;
+                }
+            }
+
+            .theme_shift {
+                @include flex-row();
+                padding-left: 0 !important;
+            }
         }
     }
 }

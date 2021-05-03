@@ -10,7 +10,9 @@ const Test = () => {
                     standard user to perform trustless over the counter trades
                     without the need for an AMM
                 </p>
-                <button>Learn more</button>
+                <button className='align_center_ml_sm min_45_sm'>
+                    Learn more
+                </button>
                 <div className='form_wrap'>
                     <div className='form_item_wrap'>
                         <label>SWAP ID:</label>
@@ -32,7 +34,9 @@ const Test = () => {
                     <div className='head'>For:</div>
                     <div className='green_text'>100.000 tokens</div>
                 </div>
-                <button className='invert disabled'>Swap</button>
+                <button className='invert disabled align_center_ml_sm min_45_sm'>
+                    Swap
+                </button>
             </div>
         </section>
     );

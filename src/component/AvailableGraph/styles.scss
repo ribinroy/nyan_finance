@@ -34,3 +34,13 @@
         padding-left: 43px;
     }
 }
+
+@media only screen and (max-width: $breakpoint-sm) {
+    html {
+        body {
+            .available_graph_wrap {
+                padding: 0 !important;
+            }
+        }
+    }
+}

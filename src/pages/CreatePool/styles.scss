@@ -127,6 +127,25 @@
         body {
             .create_pool {
                 padding-bottom: 30px !important;
+
+                .buttons_wrap {
+                    @include flex-row();
+
+                    button {
+                        flex: 1;
+                    }
+                }
+
+                .button_tab_wrap {
+                    width: 100%;
+                    @include flex-row();
+                }
+
+                .processing_box {
+                    .head {
+                        font-size: 19px;
+                    }
+                }
             }
         }
     }

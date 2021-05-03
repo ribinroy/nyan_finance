@@ -1,7 +1,7 @@
 @import './../../variables.scss';
 
 // $sideAdjust: 250px;
-$sideAdjust: 0px;
+$sideAdjust: 20px;
 
 .home {
     overflow: hidden;
@@ -40,6 +40,7 @@ $sideAdjust: 0px;
                     top: 40px;
                     right: 0;
                     justify-content: space-between;
+                    padding-right: $sideAdjust;
 
                     .left_items,
                     .right_items {
@@ -59,7 +60,7 @@ $sideAdjust: 0px;
                 .info_wrap {
                     @include flex-row();
                     width: 100%;
-                    // justify-content: space-between;
+                    justify-content: space-between;
 
                     .texts_wrap {
                         width: 50%;
@@ -69,6 +70,10 @@ $sideAdjust: 0px;
                                 margin-right: 20px;
                             }
                         }
+                    }
+
+                    svg {
+                        width: 50%;
                     }
                 }
             }
@@ -197,7 +202,9 @@ $sideAdjust: 0px;
                             }
                         }
                         svg {
-                            max-width: 100%;
+                            width: 60%;
+                            height: auto;
+                            padding: 20px 0;
                         }
 
                         .texts_wrap {

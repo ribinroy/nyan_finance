@@ -180,7 +180,7 @@ const PoolIndexInfo = ({ type }) => {
                 setShowEditPop={setShowEditPop}
             />
             <section className='nav_adjust content_wrap pool_index_wap'>
-                <div className='flex_wrap space_between'>
+                <div className='flex_wrap space_between flex_column_sm'>
                     <div className='profile_card'>
                         <div className='prof_image'></div>
                         <div className='details'>
@@ -265,9 +265,9 @@ const PoolIndexInfo = ({ type }) => {
                     )}
                 </article>
                 <article className='margin_top_10 width_100'>
-                    <div className='flex_wrap space_between width_100'>
-                        <div className='head'>Chart</div>
-                        <div className='abs_right'>
+                    <div className='flex_wrap space_between width_100 flex_column_sm'>
+                        <div className='head full_width_sm'>Chart</div>
+                        <div className='abs_right full_width_sm'>
                             <select name='sort' id='sort' className='input_box'>
                                 <option value='Last 30 days'>
                                     Last 30 days
@@ -280,19 +280,18 @@ const PoolIndexInfo = ({ type }) => {
                             options={chartData.options}
                             series={chartData.series}
                             type='area'
-                            height={550}
                         />
                     </div>
                 </article>
                 <article>
                     <div className='head'>History</div>
                     {type === 'active' ? (
-                        <div className='row_box paper_box no_padding'>
+                        <div className='row_box paper_box no_padding active_wrap'>
                             <div className='row'>
                                 <div className='icon'>
                                     <Invest />
                                 </div>
-                                <div className='date'>08.04.2021</div>
+                                <div className='date xs_hidden'>08.04.2021</div>
                                 <div className='hex'>
                                     Invested 2 BNB in LINK
                                 </div>
@@ -301,17 +300,17 @@ const PoolIndexInfo = ({ type }) => {
                                 <div className='icon'>
                                     <Dollar />
                                 </div>
-                                <div className='date'>04.04.2021</div>
+                                <div className='date xs_hidden'>04.04.2021</div>
                                 <div className='hex'>Liquidated 10 WBTC</div>
                             </div>
                         </div>
                     ) : (
-                        <div className='row_box paper_box no_padding'>
+                        <div className='row_box paper_box no_padding passive_wrap'>
                             <div className='row'>
                                 <div className='icon'>
                                     <Enter />
                                 </div>
-                                <div className='date'>08.04.2021</div>
+                                <div className='date xs_hidden'>08.04.2021</div>
                                 <div className='hex'>Ox1234567890</div>
                                 <div className='description'>
                                     entered pool with 2 BNB
@@ -321,7 +320,7 @@ const PoolIndexInfo = ({ type }) => {
                                 <div className='icon'>
                                     <Exit />
                                 </div>
-                                <div className='date'>04.04.2021</div>
+                                <div className='date xs_hidden'>04.04.2021</div>
                                 <div className='hex'>Ox148791201</div>
                                 <div className='description'>
                                     exited pool with 1 BNB
@@ -361,7 +360,11 @@ const EditPopUp = ({ showEditPop, setShowEditPop }) => {
                     <textarea className='input_box' />
                 </div>
             </div>
-            <button onClick={() => setShowEditPop(false)}>Update</button>
+            <button
+                className='align_center_ml_sm min_45_sm'
+                onClick={() => setShowEditPop(false)}>
+                Update
+            </button>
         </PopUp>
     );
 };

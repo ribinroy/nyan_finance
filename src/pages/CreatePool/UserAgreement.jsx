@@ -4,7 +4,7 @@ const UserAgreement = ({ onComplete }) => {
     const [acitveAckIndex, setActiveAckIndex] = useState(0);
     return (
         <>
-            <h1>Active pool user agreement</h1>
+            <h1 className='center_sm'>Active pool user agreement</h1>
             <div className='acknwo_wrap'>
                 <div
                     className={

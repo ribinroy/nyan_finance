@@ -88,3 +88,45 @@
         }
     }
 }
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .pool_index_wap {
+        .profile_card {
+            width: 100%;
+            justify-content: flex-start;
+        }
+        .button_wrap {
+            width: 100%;
+            margin-top: 15px;
+            button {
+                flex: 1;
+                justify-content: space-between;
+                margin: 0 5px !important;
+                margin-bottom: 10px !important;
+                width: calc(50% - 10px);
+            }
+        }
+
+        .head {
+            margin-bottom: 5px !important;
+        }
+
+        .row_box {
+            &.passive_wrap {
+                .row {
+                    .hex {
+                        width: 38%;
+                    }
+                }
+            }
+
+            &.active_wrap {
+                .row {
+                    .hex {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -184,7 +184,7 @@ const FundOverView = () => {
                     show: false,
                 },
                 type: 'area',
-                height: 350,
+                height: 250,
             },
             dataLabels: {
                 enabled: false,
@@ -282,10 +282,12 @@ const FundOverView = () => {
                         options={chartData.options}
                         series={chartData.series}
                         type='area'
-                        height={350}
+                        // height={350}
                     />
                 </div>
-                <button>View contract on ETHScan</button>
+                <button className='align_center_ml_sm min_45_sm'>
+                    View contract on ETHScan
+                </button>
             </article>
             <article>
                 <div className='sub_head'>Fund Activity</div>

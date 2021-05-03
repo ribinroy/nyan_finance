@@ -46,6 +46,10 @@ html {
             fill: var(--dark-text);
         }
 
+        .float_right {
+            float: right;
+        }
+
         .apexcharts-tooltip {
             color: var(--dark-text) !important;
             background-color: var(--main-bg-color) !important;
@@ -106,9 +110,10 @@ html {
         }
 
         .max_width_wrap {
-            max-width: 50%;
+            max-width: 60%;
             margin-left: 50%;
             transform: translate(-50%);
+            width: 100%;
         }
 
         .top_holds {
@@ -138,10 +143,15 @@ html {
         .all_uppercase {
             text-transform: uppercase;
         }
-        a,
+
         .link {
             font-weight: 600;
             font-size: 14px;
+            line-height: 17px;
+            color: #5a84fc;
+        }
+
+        a {
             line-height: 17px;
             color: #5a84fc;
         }
@@ -287,8 +297,17 @@ html {
 @media only screen and (max-width: $breakpoint-sm) {
     html {
         body {
+            .min_45_sm {
+                min-width: 45%;
+            }
+
             .flex_column_sm {
                 flex-direction: column;
+            }
+
+            .full_width_sm {
+                min-width: 100%;
+                float: left;
             }
 
             .align_center_ml_sm {
@@ -299,6 +318,7 @@ html {
             .nav_adjust {
                 padding-left: 0px;
             }
+
             .max_width_wrap {
                 max-width: 100% !important;
                 margin-left: 0;
@@ -353,7 +373,11 @@ html {
                 h1 {
                     font-size: 24px;
                     line-height: 32px;
-                    // text-align: center;
+
+                    &.center_sm {
+                        text-align: center;
+                        width: 100%;
+                    }
                 }
             }
         }

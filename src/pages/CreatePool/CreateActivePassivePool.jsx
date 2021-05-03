@@ -8,7 +8,7 @@ const CreateActivePassivePool = () => {
 
     return (
         <>
-            <h1>Create Pool</h1>
+            <h1 className='center_sm'>Create Pool</h1>
             <div className='button_tab_wrap'>
                 <button
                     className={selectedPool !== 'active' ? ' invert' : ''}
@@ -44,14 +44,17 @@ const ActivePool = ({ onRegClick }) => {
                 <input type='text' className='input_box' />
             </div>
             <div className='form_item_wrap'>
-                <label>Pool community link</label>
+                <label>Pool focus</label>
                 <textarea className='input_box' />
+                <p className='small float_right no_margin'>0 / 150</p>
             </div>
             <p>
                 Registration cost:
                 <span className='green_text'> 0.1 BNB</span>{' '}
             </p>
-            <button onClick={() => onRegClick()}>Register</button>
+            <button className='align_center_ml_sm' onClick={() => onRegClick()}>
+                Register
+            </button>
         </div>
     );
 };
@@ -87,7 +90,9 @@ const PassivePool = ({ onRegClick }) => {
                 Registration cost:
                 <span className='green_text'> 1 BNB</span>
             </p>
-            <button onClick={() => onRegClick()}>Register</button>
+            <button className='align_center_ml_sm' onClick={() => onRegClick()}>
+                Register
+            </button>
         </div>
     );
 };
@@ -98,7 +103,7 @@ const Processing = ({ poolSelected }) => {
             <p className='head'>Your index transaction is processing...</p>
             <img src={NyanCat} alt='' />
             {poolSelected === 'active' && (
-                <p>
+                <p className='no_margin'>
                     You can visit your pool here:{' '}
                     <a
                         href='http://www.google.com'
@@ -109,7 +114,7 @@ const Processing = ({ poolSelected }) => {
                 </p>
             )}
             {poolSelected !== 'active' && (
-                <p>
+                <p className='no_margin'>
                     You can visit your index here:{' '}
                     <a
                         href='http://www.google.com'
@@ -119,7 +124,9 @@ const Processing = ({ poolSelected }) => {
                     </a>
                 </p>
             )}
-            Tip: your index link is your wallet address
+            <p className='small no_margin'>
+                Tip: your index link is your wallet address
+            </p>
         </div>
     );
 };

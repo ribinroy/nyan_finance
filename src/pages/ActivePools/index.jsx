@@ -5,8 +5,8 @@ const ActivePools = () => {
     return (
         <section className='nav_adjust content_wrap active_pool'>
             <div className='flex_wrap space_between'>
-                <h1>Available active pools:</h1>
-                <div className='abs_right'>
+                <h1 className='center_sm'>Available active pools:</h1>
+                <div className='abs_right xs_hidden'>
                     <div className='item'>Sort by: </div>
                     <select name='Size' id='Size' className='input_box'>
                         <option value='Size'>Size</option>

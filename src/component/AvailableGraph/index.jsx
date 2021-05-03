@@ -228,7 +228,7 @@ const AvailableGraph = ({ type, name, owner }) => {
                 to={
                     type === 'active' ? 'active-pool-info' : '/index-fund-info'
                 }>
-                <button>View</button>
+                <button className='align_center_ml_sm min_45_sm'>View</button>
             </Link>
         </section>
     );
