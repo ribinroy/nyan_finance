@@ -1,6 +1,15 @@
 @import './inputElementStyles.scss';
 @import './variables.scss';
 
+@font-face {
+    font-family: Proxima-Nova;
+    // src: url('path/filename.woff2') format('woff2'),
+    // url('path/filename.woff') format('woff');
+    src: local('sans-serif'),
+        url('./assets/font/Proxima\ Nova\ Regular.otf') format('otf');
+    font-display: swap;
+}
+
 html {
     --main-bg-color: rgba(228, 228, 251, 1);
     --lite-text: #8690ac;
@@ -29,9 +38,8 @@ html {
 
     body {
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-            'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-            'Helvetica Neue', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Proxima-Nova',
+            sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: var(--main-bg-color);
