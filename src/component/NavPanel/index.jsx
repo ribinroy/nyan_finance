@@ -132,11 +132,7 @@ const Test = () => {
                         Icon={OTC}
                     />
                 </div>
-                <div
-                    className='nav_links_set_wrap'
-                    data-aos='fade-up'
-                    data-aos-offset='0 '
-                    data-aos-duration='1100'>
+                <div className='nav_links_set_wrap'>
                     <div
                         className='special_link'
                         onClick={() => setMobExpanded(false)}>
@@ -166,11 +162,7 @@ const Test = () => {
                         </div>
                     </div>
                 </div>
-                <div
-                    className='theme_shift only_onExpanded'
-                    data-aos='fade-up'
-                    data-aos-offset='0 '
-                    data-aos-duration='1300'>
+                <div className='theme_shift only_onExpanded'>
                     <input
                         id='s2'
                         type='checkbox'
