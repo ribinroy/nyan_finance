@@ -238,3 +238,17 @@ input[type='checkbox'] {
         font-weight: 600;
     }
 }
+
+@media only screen and (max-width: $breakpoint-sm) {
+    html {
+        body {
+            button {
+                &.align_center_ml_sm:hover {
+                    &:active {
+                        transform: translate(-50%) scale(0.98) !important;
+                    }
+                }
+            }
+        }
+    }
+}
