@@ -1,16 +1,15 @@
 import './styles.scss';
 import { useState } from 'react';
 import Chart from 'react-apexcharts';
-import PopUp from './../../component/PopUp';
 import AddBNB from './PopUps/AddBNB';
 import RemoveBNB from './PopUps/RemoveBNB';
 import TakeProfits from './PopUps/TakeProfits';
+import EditPopUp from './PopUps/EditPop';
 import { ReactComponent as Exclamation } from './../../assets/svg/icon_exclamation.svg';
 import { ReactComponent as Enter } from './../../assets/svg/icon_enter.svg';
 import { ReactComponent as Exit } from './../../assets/svg/icon_exit.svg';
 import { ReactComponent as Dollar } from './../../assets/svg/icon_dollar_green.svg';
 import { ReactComponent as Invest } from './../../assets/svg/icon_invest.svg';
-import { ReactComponent as Edit } from './../../assets/svg/icon_edit.svg';
 
 const PoolIndexInfo = ({ type }) => {
     const [showEditPop, setShowEditPop] = useState(false);
@@ -379,41 +378,6 @@ const PoolIndexInfo = ({ type }) => {
                 </div>
             </section>
         </>
-    );
-};
-
-const EditPopUp = ({ showEditPop, setShowEditPop }) => {
-    return (
-        <PopUp
-            visible={showEditPop}
-            className={'edit_pop_up'}
-            onClose={() => setShowEditPop(false)}
-            responsive={false}>
-            <div className='edit_header'>
-                <div className='image'></div>
-                <Edit />
-                <div>Edit pool image</div>
-            </div>
-            <div className='form_wrap'>
-                <div className='form_item_wrap'>
-                    <label>Pool manager fee %:</label>
-                    <input
-                        type='text'
-                        className='input_box'
-                        defaultValue='1%'
-                    />
-                </div>
-                <div className='form_item_wrap'>
-                    <label>Pool description:</label>
-                    <textarea className='input_box' />
-                </div>
-            </div>
-            <button
-                className='align_center_ml_sm min_45_sm'
-                onClick={() => setShowEditPop(false)}>
-                Update
-            </button>
-        </PopUp>
     );
 };
 
