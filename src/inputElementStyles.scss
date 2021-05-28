@@ -239,6 +239,17 @@ input[type='checkbox'] {
     }
 }
 
+.special_input_style {
+    border: 0px;
+    border-radius: 0;
+    border-bottom: 2px solid var(--border-color);
+    background-color: var(--main-bg-color);
+    outline: none;
+    color: var(--dark-text);
+    padding: 4px;
+    font-size: 17px;
+}
+
 @media only screen and (max-width: $breakpoint-sm) {
     html {
         body {

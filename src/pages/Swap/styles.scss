@@ -1,0 +1,12 @@
+@import './../../variables.scss';
+
+.swap {
+    p {
+        color: var(--lite-text) !important;
+    }
+    .pool_investments {
+        margin-top: 15px;
+        float: left;
+        width: 100%;
+    }
+}
