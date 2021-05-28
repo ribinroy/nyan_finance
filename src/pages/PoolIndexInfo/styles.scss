@@ -64,6 +64,41 @@
     }
 }
 
+.pool_pop_up {
+    width: 100% !important;
+    max-width: 800px;
+    overflow: auto;
+    height: auto !important;
+    max-height: 65vh !important;
+
+    hr {
+        border-top: 1px solid #d8d8d8;
+    }
+
+    .form_wrap {
+        margin-top: 5px;
+        float: left;
+
+        input {
+            max-width: 200px;
+        }
+    }
+
+    p {
+        float: left;
+        width: 100%;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+
+    .section_brake {
+        margin: 0;
+        margin-top: 20px;
+    }
+}
+
 .edit_pop_up {
     width: 550px !important;
 

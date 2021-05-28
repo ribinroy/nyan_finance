@@ -2,6 +2,9 @@ import './styles.scss';
 import { useState } from 'react';
 import Chart from 'react-apexcharts';
 import PopUp from './../../component/PopUp';
+import AddBNB from './PopUps/AddBNB';
+import RemoveBNB from './PopUps/RemoveBNB';
+import TakeProfits from './PopUps/TakeProfits';
 import { ReactComponent as Exclamation } from './../../assets/svg/icon_exclamation.svg';
 import { ReactComponent as Enter } from './../../assets/svg/icon_enter.svg';
 import { ReactComponent as Exit } from './../../assets/svg/icon_exit.svg';
@@ -11,6 +14,10 @@ import { ReactComponent as Edit } from './../../assets/svg/icon_edit.svg';
 
 const PoolIndexInfo = ({ type }) => {
     const [showEditPop, setShowEditPop] = useState(false);
+    const [showAddBNB, setShowAddBNB] = useState(false);
+    const [showRemoveBNB, setShowRemoveBNB] = useState(false);
+    const [showTakeProfits, setShowTakeProfits] = useState(false);
+
     const graphColor = type === 'active' ? '#9661dc' : '#6088fc';
     const chartData = {
         series: [
@@ -179,6 +186,15 @@ const PoolIndexInfo = ({ type }) => {
                 showEditPop={showEditPop}
                 setShowEditPop={setShowEditPop}
             />
+            <AddBNB showPop={showAddBNB} changeShowPop={setShowAddBNB} />
+            <RemoveBNB
+                showPop={showRemoveBNB}
+                changeShowPop={setShowRemoveBNB}
+            />
+            <TakeProfits
+                showPop={showTakeProfits}
+                changeShowPop={setShowTakeProfits}
+            />
             <section className='nav_adjust content_wrap pool_index_wap'>
                 <div
                     data-aos='fade-up'
@@ -219,11 +235,21 @@ const PoolIndexInfo = ({ type }) => {
                     <article>
                         <p>My tokens:</p>
                         <div className='button_wrap'>
-                            <button className='invert no_margin'>
+                            <button
+                                className='invert no_margin'
+                                onClick={() => setShowAddBNB(true)}>
                                 Add BNB
                             </button>
-                            <button className='invert'>Remove BNB</button>
-                            <button className='invert'>Take profits</button>
+                            <button
+                                className='invert'
+                                onClick={() => setShowRemoveBNB(true)}>
+                                Remove BNB
+                            </button>
+                            <button
+                                className='invert'
+                                onClick={() => setShowTakeProfits(true)}>
+                                Take profits
+                            </button>
                         </div>
                     </article>
                     <article>
@@ -390,4 +416,5 @@ const EditPopUp = ({ showEditPop, setShowEditPop }) => {
         </PopUp>
     );
 };
+
 export default PoolIndexInfo;
