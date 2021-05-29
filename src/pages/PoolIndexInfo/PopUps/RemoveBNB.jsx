@@ -26,7 +26,9 @@ const AddBNB = ({ showPop, changeShowPop, isRemove }) => {
                 </div>
                 <p className='no_margin'>Expected BNB</p>
                 <p className='no_margin green_text'>0 BNB</p>
-                <button className='' onClick={() => changeShowPop(false)}>
+                <button
+                    className='align_center_ml_sm min_45_sm'
+                    onClick={() => changeShowPop(false)}>
                     Withdraw my Liquidity
                 </button>
             </div>

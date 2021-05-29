@@ -21,7 +21,9 @@ const AddBNB = ({ showPop, changeShowPop, isRemove }) => {
                 <p className='no_margin green_text'>0 BNB</p>
                 <p className='section_brake'>Expected BNB:</p>
                 <p className='no_margin green_text'>0 BNB</p>
-                <button className='' onClick={() => changeShowPop(false)}>
+                <button
+                    className='align_center_ml_sm min_45_sm'
+                    onClick={() => changeShowPop(false)}>
                     Claim
                 </button>
             </div>

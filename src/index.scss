@@ -68,6 +68,67 @@ html {
             }
         }
 
+        .loader_wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader {
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: var(--purple);
+            animation: comeIn 0.2s 1;
+
+            @keyframes comeIn {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
+                }
+            }
+            @keyframes loader {
+                from {
+                    left: -200px;
+                }
+                to {
+                    left: calc(100% + 200px);
+                }
+            }
+
+            &:before {
+                @include pseudo_abs();
+                height: 100%;
+                width: 190px;
+                background: linear-gradient(
+                    to right,
+                    transparent,
+                    var(--main-bg-color),
+                    transparent
+                );
+                margin-left: -200px;
+                animation: loader 2s infinite ease-in-out;
+            }
+
+            &:after {
+                @include pseudo_abs();
+                height: 100%;
+                width: 190px;
+                background: linear-gradient(
+                    to right,
+                    transparent,
+                    var(--main-bg-color),
+                    transparent
+                );
+                margin-left: -200px;
+                animation: loader 2s infinite ease-in-out;
+                animation-delay: 1s;
+            }
+        }
+
         .form_wrap {
             width: 100%;
             margin-top: 40px;
@@ -166,7 +227,7 @@ html {
             color: #5a84fc;
         }
 
-        .no_padding {
+        & > * .no_padding {
             padding: 0 !important;
         }
 
@@ -389,6 +450,10 @@ html {
                         width: 100%;
                     }
                 }
+            }
+
+            .no_padding {
+                padding: 0 !important;
             }
         }
     }
