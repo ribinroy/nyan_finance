@@ -22,6 +22,25 @@
 
             .form_item_wrap {
                 width: calc(33.33% - 20px);
+
+                label {
+                    @include flex-row();
+                    justify-content: space-between;
+
+                    .logo_wrap {
+                        float: right;
+                        @include flex-row();
+                        justify-content: flex-end;
+                        font-size: 14px;
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+                            object-fit: contain;
+                            margin-left: 5px;
+                        }
+                    }
+                }
             }
         }
     }

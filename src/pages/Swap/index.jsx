@@ -1,5 +1,6 @@
 import './styles.scss';
 import { useState } from 'react';
+import BNBLogo from './../../assets/images/BNB Logo.png';
 
 const tempData = {
     token: 'Bonfire',
@@ -64,7 +65,13 @@ const SwapForm = () => {
             <p className='no_margin'>My BNB 0.047</p>
             <div className='form_wrap'>
                 <div className='form_item_wrap'>
-                    <label>From</label>
+                    <label>
+                        From
+                        <div className='logo_wrap'>
+                            BNB
+                            <img src={BNBLogo} alt='BNB Logo' />
+                        </div>
+                    </label>
                     <input
                         type='text'
                         className='input_box'
